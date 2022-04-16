@@ -38,7 +38,7 @@ const Home = () => {
                 <Verse></Verse>
             </div>
             <h2>Courses I offer:</h2>
-            <div>
+            <div className='course-container'>
                 {
                     courses.map(course => <Course
                         key={course.id}
