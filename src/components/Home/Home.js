@@ -2,6 +2,8 @@ import React from 'react';
 import './Home.css'
 import banner from '../../img/quran1.jpg'
 import { Carousel } from 'react-bootstrap';
+import Verse from '../Verse/Verse';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
     return (
@@ -23,19 +25,14 @@ const Home = () => {
                 </Carousel>
             </div>
 
-
-
             <div>
                 <h1>Read a single verse everyday</h1>
-                <div className='verse-container'>
-                    <hr className='horizontal-line' />
-                    <h2>" تَبَـٰرَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌ "</h2>
-                    <hr />
-                    <h3>Meaning: Blessed is the One in Whose Hands rests all authority. And He is Most Capable of everything. (67:1)</h3>
-                    <hr className='horizontal-line' />
-                </div>
-
+                <Verse></Verse>
             </div>
+
+            <div><h2>Courses I offer:</h2></div>
+
+            <Footer></Footer>
         </div>
     );
 };

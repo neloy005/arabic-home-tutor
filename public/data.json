@@ -1,0 +1,38 @@
+[
+    {
+        "id": "625b19dfee8a2c21541c1b0c",
+        "picture": "https://img.freepik.com/free-photo/top-view-quran-books-table_23-2148450958.jpg?t=st=1650137720~exp=1650138320~hmac=a68f9f457f442b06a6a358ab1515a2ce5641de73f26777cc33bc1bf5fe581947&w=1060",
+        "duration": "60 days",
+        "stars": 5,
+        "name": "Learn Al-Quran",
+        "deatils": "Learn to read al quarn in the most accurate way. Where I guide you through the steps of reading arabic.",
+        "price": 5000
+    },
+    {
+        "id": "625b19df864d3bd284f71dbb",
+        "picture": "https://img.freepik.com/free-photo/muslim-praying-sujud-posture_53876-25222.jpg?t=st=1650137870~exp=1650138470~hmac=b2d90ca845433e99d25fd9aa3491c2ee3517c93e4c8cabb1207e9dd94eaa6a95&w=996",
+        "duration": "15 days",
+        "stars": 4,
+        "name": "Salat learning",
+        "deatils": "Get started today. No missing salat anymore.",
+        "price": 2000
+    },
+    {
+        "id": "625b19dfee85f7b97007b398",
+        "picture": "https://img.freepik.com/free-photo/quran-dates-near-burning-candles_23-2147868957.jpg?t=st=1650138061~exp=1650138661~hmac=df471254a2b5a614521f22607543c2abb2d49a26ee607aa4829fbd51e7b32e1a&w=1060",
+        "duration": "30 days",
+        "stars": 5,
+        "name": "Learn hadis",
+        "deatils": "Learn about hadis. learn what our prophet said.",
+        "price": 2500
+    },
+    {
+        "id": "625b19df3c293593df6f7077",
+        "picture": "https://img.freepik.com/free-photo/muslim-men-praying-tashahhud-posture_53876-48943.jpg?w=1060&t=st=1650138908~exp=1650139508~hmac=100acd0962cdeed95d6304b13dffa9a10eb8f32a074d9ca4998802ca6107a705",
+        "duration": "30 days",
+        "stars": 4,
+        "name": "Learn islamic life-style",
+        "deatils": "Learn what to do, what not to do and how to do. Everything related to islam to become a perfect muslim.",
+        "price": 4500
+    }
+]
