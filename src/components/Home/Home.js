@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css'
 import banner from '../../img/quran1.jpg'
 import { Carousel } from 'react-bootstrap';
 import Verse from '../Verse/Verse';
-import Footer from '../Footer/Footer';
+import Course from '../Course/Course';
 
 const Home = () => {
+
+    const [courses, setCourses] = useState([]);
+    useEffect(() => {
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => setCourses(data));
+    }, [])
+
     return (
         <div>
             <h2>Arabic home tutor</h2>
@@ -29,10 +37,16 @@ const Home = () => {
                 <h1>Read a single verse everyday</h1>
                 <Verse></Verse>
             </div>
+            <h2>Courses I offer:</h2>
+            <div>
+                {
+                    courses.map(course => <Course
+                        key={course.id}
+                        course={course}
+                    ></Course>)
+                }
+            </div>
 
-            <div><h2>Courses I offer:</h2></div>
-
-            <Footer></Footer>
         </div>
     );
 };
