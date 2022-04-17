@@ -30,6 +30,14 @@
     color: white;
 }
 
+.google-login-container {
+    display: inline-block;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 688px) {
     .login-container input {
         width: 50%;

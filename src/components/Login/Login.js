@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
+import google from '../../img/google.png'
 
 const Login = () => {
     const emailRef = useRef('');
@@ -24,16 +25,17 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
     const [
         sendPasswordResetEmail,
         sending
     ] = useSendPasswordResetEmail(auth);
 
-    if (user) {
+    if (user || user1) {
         navigate(from, { replace: true });
     }
-    if (error) {
-        errorMsg = <p style={{ 'color': 'red' }}>Error: {error?.message} </p>
+    if (error || error1) {
+        errorMsg = <p style={{ 'color': 'red' }}>Error: {error?.message} {error1?.message}</p>
     }
 
     const handleSubmit = event => {
@@ -60,8 +62,14 @@ const Login = () => {
                 {errorMsg}
                 <input className='submit-btn' type="submit" value='Login' />
             </form>
+
             <p>Forget password? <span style={{ 'color': 'blue', 'cursor': 'pointer' }} onClick={resetPassword}>Reset Password</span></p>
             <p>New in my website? <span style={{ 'color': 'blue', 'cursor': 'pointer' }} onClick={navigateToRegister}>Please Register.</span></p>
+            <p>Or</p>
+            <div onClick={() => signInWithGoogle()} className='google-login-container'>
+                <img style={{ 'width': '20px' }} src={google} alt="" />
+                <span>Login with google</span>
+            </div>
         </div>
     );
 };
