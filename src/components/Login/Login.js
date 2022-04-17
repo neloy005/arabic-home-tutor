@@ -11,6 +11,7 @@ const Login = () => {
         <div className='login-container'>
             <h2>Login to your account</h2>
             <h3>Login to your personal account to start courses 😊</h3>
+            <hr />
             <form>
                 <input type="email" placeholder='Enter Your Email' /> <br />
                 <input type="password" placeholder='Enter Your password' /> <br />
