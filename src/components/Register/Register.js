@@ -1,27 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { async } from '@firebase/util';
 
 const Register = () => {
+    const [errorMsg, setErrorMsg] = useState('');
     const navigate = useNavigate()
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    // let errorMsg;
+    // if (error) {
+    //     errorMsg = <p style={{ 'color': 'red' }}>{error.message}</p>
+    // }
+    if (loading || updating) {
+        return <p className='loading-style'>Loading...</p>
+    }
+
     const navigateToLogin = () => {
         navigate('/login');
     }
 
-    const handleRegister = (event) => {
+    const handleRegister = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(name, email, password);
+        if (password.length < 6) {
+            setErrorMsg('password must be 6 character or more');
+            return;
+        }
+
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
+        console.log('profile updated');
+        navigate('/home');
     }
+
     return (
         <div className='login-container'>
             <h2>Register your account</h2>
             <hr />
             <form onSubmit={handleRegister}>
-                <input type="text" name='name' placeholder='Enter Your Name' /> <br />
-                <input type="email" name='email' placeholder='Enter Your Email' /> <br />
-                <input type="password" name='password' placeholder='Enter Your password' /> <br />
+                <input type="text" name='name' placeholder='Enter Your Name' required /> <br />
+                <input type="email" name='email' placeholder='Enter Your Email' required /> <br />
+                <input type="password" name='password' placeholder='Enter Your password' required /> <br />
+                <p style={{ 'color': 'red' }}>{errorMsg} </p>
                 <input className='submit-btn' type="submit" value='Register' />
             </form>
             <p>New in my website? <span style={{ 'color': 'blue', 'cursor': 'pointer' }} onClick={navigateToLogin}>Please Login.</span></p>

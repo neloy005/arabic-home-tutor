@@ -13,6 +13,9 @@
     font-size: 17px;
 }
 
+.login-container input:not([type="submit"]):hover {
+    border-bottom: 2.5px solid black;
+}
 
 .submit-btn {
     margin: 10px;
