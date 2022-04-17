@@ -16,10 +16,6 @@ const Register = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    // let errorMsg;
-    // if (error) {
-    //     errorMsg = <p style={{ 'color': 'red' }}>{error.message}</p>
-    // }
     if (loading || updating) {
         return <p className='loading-style'>Loading...</p>
     }
@@ -55,7 +51,7 @@ const Register = () => {
                 <p style={{ 'color': 'red' }}>{errorMsg} </p>
                 <input className='submit-btn' type="submit" value='Register' />
             </form>
-            <p>New in my website? <span style={{ 'color': 'blue', 'cursor': 'pointer' }} onClick={navigateToLogin}>Please Login.</span></p>
+            <p>Already registered? <span style={{ 'color': 'blue', 'cursor': 'pointer' }} onClick={navigateToLogin}>Please Login.</span></p>
         </div>
     );
 };
