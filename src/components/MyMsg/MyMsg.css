@@ -1,0 +1,22 @@
+.my-msg-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 100px;
+}
+
+.my-msg-container p {
+    font-size: 20px;
+    font-weight: 150;
+    margin-top: 30px;
+}
+
+.my-msg-container img {
+    width: 50%;
+    border-radius: 10px;
+    margin-left: 20px;
+}

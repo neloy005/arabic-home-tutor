@@ -13,8 +13,14 @@ const Course = (props) => {
         <div className='single-course'>
             <h2>{name}</h2>
             <img src={picture} alt="" />
+            <p className='course-details'>{deatils}</p>
+            <hr />
+            <p>Duration: {duration}</p>
+            <hr />
+            <h4>Price: {price} taka only</h4>
+
             <button onClick={goToCheckOut}>Start from today</button>
-        </div>
+        </div >
     );
 };
 

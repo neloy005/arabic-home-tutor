@@ -4,6 +4,7 @@ import banner from '../../img/quran1.jpg'
 import { Carousel } from 'react-bootstrap';
 import Verse from '../Verse/Verse';
 import Course from '../Course/Course';
+import MyMsg from '../MyMsg/MyMsg';
 
 const Home = () => {
 
@@ -16,7 +17,6 @@ const Home = () => {
 
     return (
         <div>
-            <h2>Arabic home tutor</h2>
             <div className='banner-container'>
                 <Carousel>
                     <Carousel.Item>
@@ -37,7 +37,7 @@ const Home = () => {
                 <h1>Read a single verse everyday</h1>
                 <Verse></Verse>
             </div>
-            <h2>Courses I offer:</h2>
+            <h2 style={{ 'margin-top': '150px' }}>Courses I offer:</h2>
             <div className='course-container'>
                 {
                     courses.map(course => <Course
@@ -46,6 +46,8 @@ const Home = () => {
                     ></Course>)
                 }
             </div>
+
+            <MyMsg></MyMsg>
 
         </div>
     );

@@ -49,9 +49,14 @@ const Login = () => {
     }
     const resetPassword = async () => {
         const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Email sent');
+        }
+        else {
+            toast('Enter your email first');
+        }
 
-        await sendPasswordResetEmail(email);
-        toast('Email sent');
     }
     return (
         <div className='login-container'>
