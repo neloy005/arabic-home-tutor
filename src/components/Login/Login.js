@@ -4,6 +4,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
 import google from '../../img/google.png'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -49,7 +51,7 @@ const Login = () => {
         const email = emailRef.current.value;
 
         await sendPasswordResetEmail(email);
-        console.log('email sent');
+        toast('Email sent');
     }
     return (
         <div className='login-container'>
@@ -70,6 +72,7 @@ const Login = () => {
                 <img style={{ 'width': '20px' }} src={google} alt="" />
                 <span>Login with google</span>
             </div>
+            <ToastContainer />
         </div>
     );
 };
