@@ -1,13 +1,19 @@
 import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
 
 const Login = () => {
     const emailRef = useRef('');
+
     const navigate = useNavigate()
+
     let errorMsg;
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
     const navigateToRegister = () => {
         navigate('/register');
     }
@@ -24,7 +30,7 @@ const Login = () => {
     ] = useSendPasswordResetEmail(auth);
 
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
     if (error) {
         errorMsg = <p style={{ 'color': 'red' }}>Error: {error?.message} </p>
