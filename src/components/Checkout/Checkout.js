@@ -2,6 +2,9 @@ import React from 'react';
 
 const Checkout = () => {
     return (
+        ///////////////////////
+        // Checkout form 
+        //////////////////////
         <div className='login-container'>
             <h2>Checkout</h2>
             <form>

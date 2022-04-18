@@ -27,6 +27,9 @@ const Header = () => {
 
                         </Nav>
                         <Nav>
+                            {/* ---------------- */}
+                            {/* Login and logout */}
+                            {/* ---------------- */}
                             {
                                 user ?
                                     <Nav.Link onClick={handleSignOut}>🟢Logout 🔐</Nav.Link> :

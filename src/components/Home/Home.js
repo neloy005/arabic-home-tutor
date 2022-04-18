@@ -9,6 +9,10 @@ import MyMsg from '../MyMsg/MyMsg';
 const Home = () => {
 
     const [courses, setCourses] = useState([]);
+    ////////////////////
+    // Load JSON Data //
+    ////////////////////
+
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
@@ -17,6 +21,9 @@ const Home = () => {
 
     return (
         <div>
+            {/* ---------- */}
+            {/* Banner  */}
+            {/* ---------- */}
             <div className='banner-container'>
                 <Carousel>
                     <Carousel.Item>
@@ -34,6 +41,10 @@ const Home = () => {
             </div>
 
             <div>
+                {/* ----------------- */}
+                {/* Single Quran Ayat */}
+                {/* ----------------- */}
+
                 <h1>Read a single verse everyday</h1>
                 <Verse></Verse>
             </div>
@@ -46,7 +57,9 @@ const Home = () => {
                     ></Course>)
                 }
             </div>
-
+            {/* ------------------ */}
+            {/* About my course  */}
+            {/* ------------------ */}
             <MyMsg></MyMsg>
 
         </div>

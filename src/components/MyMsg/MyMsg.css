@@ -20,3 +20,14 @@
     border-radius: 10px;
     margin-left: 20px;
 }
+
+@media only screen and (max-width: 688px) {
+    .my-msg-container {
+        flex-direction: column;
+    }
+
+    .my-msg-container img {
+        width: 100%;
+        margin: 0;
+    }
+}

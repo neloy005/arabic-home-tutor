@@ -7,6 +7,9 @@ import { async } from '@firebase/util';
 const Register = () => {
     const [errorMsg, setErrorMsg] = useState('');
     const navigate = useNavigate()
+    //////////////////////////////
+    // Firebase create user //
+    //////////////////////////////
     const [
         createUserWithEmailAndPassword,
         user,
@@ -14,6 +17,9 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
+    //////////////////////////////
+    // Firebase update profile //
+    //////////////////////////////
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     if (loading || updating) {
