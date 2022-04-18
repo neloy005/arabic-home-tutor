@@ -48,7 +48,7 @@ const Home = () => {
                 <h1>Read a single verse everyday</h1>
                 <Verse></Verse>
             </div>
-            <h2 style={{ 'margin-top': '150px' }}>Courses I offer:</h2>
+            <h2 style={{ 'marginTop': '150px' }}>Courses I offer:</h2>
             <div className='course-container'>
                 {
                     courses.map(course => <Course

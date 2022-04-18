@@ -13,13 +13,18 @@ const Login = () => {
     const navigate = useNavigate()
 
     let errorMsg;
-
+    //////////////////////////////
+    // Set location after login //
+    //////////////////////////////
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
     const navigateToRegister = () => {
         navigate('/register');
     }
+    //////////////////////////////
+    // Firebase login email-pass//
+    //////////////////////////////
     const [
         signInWithEmailAndPassword,
         user,
@@ -27,7 +32,16 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+
+    //////////////////////////////
+    //Firebase login google//// //
+    //////////////////////////////
     const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+
+
+    //////////////////////////////
+    // Firebase reset password //
+    //////////////////////////////
     const [
         sendPasswordResetEmail,
         sending
